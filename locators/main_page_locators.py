@@ -19,6 +19,5 @@ class MainPageLocators:
     TEXT_ARROW_CANCEL_AN_ORDER = [By.ID, 'accordion__panel-6']#Текст в стрелочке «Можно ли отменить заказ?»
     ARROW_LIVE_OUTSIDE_MKAD = [By.ID, 'accordion__heading-7'] #Стрелочка «Я жизу за МКАДом, привезёте?»
     TEXT_ARROW_LIVE_OUTSIDE_MKAD = [By.ID, 'accordion__panel-7'] #Текст в стрелочке «Я жизу за МКАДом, привезёте?»
-    BUTTON_ORDER = [By.XPATH, "//div[@class='Header_Nav__AGCXC']/child::button[@class='Button_Button__ra12g']"] #Кнопка Заказать вверху главной
     LOGO_SCOOTER = [By.XPATH,'//a[contains(@class, "Header_LogoScooter")]']#Логотип Самоката
     LOGO_YANDEX = [By.CLASS_NAME,'Header_LogoYandex__3TSOI']#Логотип Яндекса

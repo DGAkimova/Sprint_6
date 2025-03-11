@@ -1,7 +1,7 @@
 import allure
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
-from locators.main_page_locators import MainPageLocators
+from locators.base_page_locators import BasePageLocators
 from locators.order_page_locators import OrderPageLocators
 
 
@@ -16,8 +16,8 @@ class BasePage:
 
     @allure.step('Нажимаем на кнопку Заказать')
     def click_button_order(self):
-        self.wait_for_load_element(MainPageLocators.BUTTON_ORDER)
-        self.driver.find_element(*MainPageLocators.BUTTON_ORDER).click()
+        self.wait_for_load_element(BasePageLocators.BUTTON_ORDER)
+        self.driver.find_element(*BasePageLocators.BUTTON_ORDER).click()
         self.wait_for_load_element(OrderPageLocators.FIELD_NAME)
 
     @allure.step('Переключение на новую вкладку')

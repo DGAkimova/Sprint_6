@@ -2,32 +2,26 @@ from locators.main_page_locators import MainPageLocators
 from pages.main_page import MainPage
 import allure
 from urls.base_page_urls import BasePageUrls
+from data.data import Data
 
 class TestMainPage:
-    TEXT_HOW_MUCH = 'Сутки — 400 рублей. Оплата курьеру — наличными или картой.'
-    TEXT_WANT_SOME_SCOOTER = 'Пока что у нас так: один заказ — один самокат. Если хотите покататься с друзьями, можете просто сделать несколько заказов — один за другим.'
-    TEXT_HOW_IS_RENTAL_TIME_CALCULATED = 'Допустим, вы оформляете заказ на 8 мая. Мы привозим самокат 8 мая в течение дня. Отсчёт времени аренды начинается с момента, когда вы оплатите заказ курьеру. Если мы привезли самокат 8 мая в 20:30, суточная аренда закончится 9 мая в 20:30.'
-    TEXT_ODER_SCOOTER_TODAY = 'Только начиная с завтрашнего дня. Но скоро станем расторопнее.'
-    TEXT_EXTEND_OR_RETURN_SCOOTER = 'Пока что нет! Но если что-то срочное — всегда можно позвонить в поддержку по красивому номеру 1010.'
-    TEXT_CHARGER_WITH_SCOOTER = 'Самокат приезжает к вам с полной зарядкой. Этого хватает на восемь суток — даже если будете кататься без передышек и во сне. Зарядка не понадобится.'
-    TEXT_CANCEL_AN_ORDER = 'Да, пока самокат не привезли. Штрафа не будет, объяснительной записки тоже не попросим. Все же свои.'
-    TEXT_LIVE_OUTSIDE_MKAD = 'Да, обязательно. Всем самокатов! И Москве, и Московской области.'
+
     @allure.title('Проверка текста по нажатию стрелочку «Сколько это стоит? И как оплатить?»')
     def test_chech_text_for_questions_about_great_how_much(self,driver):
         driver.get(BasePageUrls.URL_MAIN_PAGE)
         main_page = MainPage(driver)
-        main_page.check_text_questions_about_great(self.TEXT_HOW_MUCH,MainPageLocators.ARROW_HOW_MUCH,MainPageLocators.TEXT_ARROW_HOW_MUCH)
+        main_page.check_text_questions_about_great(Data.TEXT_HOW_MUCH,MainPageLocators.ARROW_HOW_MUCH,MainPageLocators.TEXT_ARROW_HOW_MUCH)
     @allure.title('Проверка текста по нажатию стрелочку «Хочу сразу несколько самокатов! Так можно?»')
     def test_chech_text_for_questions_about_great_want_some_scooter(self,driver):
         driver.get(BasePageUrls.URL_MAIN_PAGE)
         main_page = MainPage(driver)
-        main_page.check_text_questions_about_great(self.TEXT_WANT_SOME_SCOOTER,MainPageLocators.ARROW_WANT_SOME_SCOOTER,MainPageLocators.TEXT_ARROW_WANT_SOME_SCOOTER)
+        main_page.check_text_questions_about_great(Data.TEXT_WANT_SOME_SCOOTER,MainPageLocators.ARROW_WANT_SOME_SCOOTER,MainPageLocators.TEXT_ARROW_WANT_SOME_SCOOTER)
 
     @allure.title('Проверка текста по нажатию стрелочку «Как рассчитывается время аренды?»')
     def test_chech_text_for_questions_about_great_how_is_rental_time_calculated(self, driver):
         driver.get(BasePageUrls.URL_MAIN_PAGE)
         main_page = MainPage(driver)
-        main_page.check_text_questions_about_great(self.TEXT_HOW_IS_RENTAL_TIME_CALCULATED,
+        main_page.check_text_questions_about_great(Data.TEXT_HOW_IS_RENTAL_TIME_CALCULATED,
                                                    MainPageLocators.ARROW_HOW_IS_RENTAL_TIME_CALCULATED,
                                                    MainPageLocators.TEXT_ARROW_HOW_IS_RENTAL_TIME_CALCULATED)
 
@@ -35,7 +29,7 @@ class TestMainPage:
     def test_chech_text_for_questions_about_great_order_scooter_today(self, driver):
         driver.get(BasePageUrls.URL_MAIN_PAGE)
         main_page = MainPage(driver)
-        main_page.check_text_questions_about_great(self.TEXT_ODER_SCOOTER_TODAY,
+        main_page.check_text_questions_about_great(Data.TEXT_ODER_SCOOTER_TODAY,
                                                    MainPageLocators.ARROW_ORDER_SCOOTER_TODAY,
                                                    MainPageLocators.TEXT_ARROW_ORDER_SCOOTER_TODAY)
 
@@ -43,7 +37,7 @@ class TestMainPage:
     def test_chech_text_for_questions_about_great_extend_or_return_scooter(self, driver):
         driver.get(BasePageUrls.URL_MAIN_PAGE)
         main_page = MainPage(driver)
-        main_page.check_text_questions_about_great(self.TEXT_EXTEND_OR_RETURN_SCOOTER,
+        main_page.check_text_questions_about_great(Data.TEXT_EXTEND_OR_RETURN_SCOOTER,
                                                    MainPageLocators.ARROW_EXTEND_OR_RETURN_SCOOTER,
                                                    MainPageLocators.TEXT_ARROW_EXTEND_OR_RETURN_SCOOTER)
 
@@ -51,7 +45,7 @@ class TestMainPage:
     def test_chech_text_for_questions_about_great_charger_with_scooter(self, driver):
         driver.get(BasePageUrls.URL_MAIN_PAGE)
         main_page = MainPage(driver)
-        main_page.check_text_questions_about_great(self.TEXT_CHARGER_WITH_SCOOTER,
+        main_page.check_text_questions_about_great(Data.TEXT_CHARGER_WITH_SCOOTER,
                                                    MainPageLocators.ARROW_CHARGER_WITH_SCOOTER,
                                                    MainPageLocators.TEXT_ARROW_CHARGER_WITH_SCOOTER)
 
@@ -59,7 +53,7 @@ class TestMainPage:
     def test_chech_text_for_questions_about_great_cancel_an_order(self, driver):
         driver.get(BasePageUrls.URL_MAIN_PAGE)
         main_page = MainPage(driver)
-        main_page.check_text_questions_about_great(self.TEXT_CANCEL_AN_ORDER,
+        main_page.check_text_questions_about_great(Data.TEXT_CANCEL_AN_ORDER,
                                                    MainPageLocators.ARROW_CANCEL_AN_ORDER,
                                                    MainPageLocators.TEXT_ARROW_CANCEL_AN_ORDER)
 
@@ -67,7 +61,7 @@ class TestMainPage:
     def test_chech_text_for_questions_about_great_live_outside_mkad(self, driver):
         driver.get(BasePageUrls.URL_MAIN_PAGE)
         main_page = MainPage(driver)
-        main_page.check_text_questions_about_great(self.TEXT_LIVE_OUTSIDE_MKAD,
+        main_page.check_text_questions_about_great(Data.TEXT_LIVE_OUTSIDE_MKAD,
                                                    MainPageLocators.ARROW_LIVE_OUTSIDE_MKAD,
                                                    MainPageLocators.TEXT_ARROW_LIVE_OUTSIDE_MKAD)
 

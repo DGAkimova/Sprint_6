@@ -1,16 +1,11 @@
 import allure
 from locators.order_page_locators import OrderPageLocators
 from pages.base_page import BasePage
-from locators.main_page_locators import MainPageLocators
 
 class OrderPage(BasePage):
 
 
-    @allure.step('Нажимаем на кнопку Заказать')
-    def click_button_order(self):
-        self.wait_for_load_element(MainPageLocators.BUTTON_ORDER)
-        self.driver.find_element(*MainPageLocators.BUTTON_ORDER).click()
-        self.wait_for_load_element(OrderPageLocators.FIELD_NAME)
+
     @allure.step('Вводим Имя')
     def set_name(self,name):
         self.driver.find_element(*OrderPageLocators.FIELD_NAME).send_keys(name)
