@@ -1,5 +1,6 @@
 import allure
 from locators.order_page_locators import OrderPageLocators
+from locators.base_page_locators import BasePageLocators
 from pages.base_page import BasePage
 
 class OrderPage(BasePage):
@@ -8,7 +9,7 @@ class OrderPage(BasePage):
 
     @allure.step('Вводим Имя')
     def set_name(self,name):
-        self.driver.find_element(*OrderPageLocators.FIELD_NAME).send_keys(name)
+        self.driver.find_element(*BasePageLocators.FIELD_NAME).send_keys(name)
 
     @allure.step('Вводим фамилию')
     def set_last_name(self,last_name):

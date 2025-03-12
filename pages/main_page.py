@@ -6,8 +6,7 @@ from locators.main_page_locators import MainPageLocators
 
 class MainPage(BasePage):
 
-    def wait_for_clickable_element_for_home_page(self,locators):
-        WebDriverWait(self.driver,5).until(expected_conditions.element_to_be_clickable(locators))
+
 
     @allure.step('Кликаем по стрелочке с вопросами')
     def click_arrow_for_questions_about_great(self,locators):

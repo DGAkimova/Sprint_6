@@ -1,7 +1,6 @@
 from selenium.webdriver.common.by import By
 
 class OrderPageLocators:
-    FIELD_NAME = [By.XPATH,"//input[@placeholder='* Имя']"] #Поле ввода имени
     FIELD_LAST_NAME = [By.XPATH,"//input[@placeholder='* Фамилия']"] # Поле для ввода фамилия
     FIELD_ADDRESS = [By.XPATH,"//input[@placeholder='* Адрес: куда привезти заказ']"]#Поле для ввода адреса
     FIELD_METRO = [By.XPATH,"//input[@placeholder='* Станция метро']"]#Поле для выбора метро
