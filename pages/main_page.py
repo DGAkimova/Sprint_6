@@ -10,11 +10,11 @@ class MainPage(BasePage):
 
     @allure.step('Кликаем по стрелочке с вопросами')
     def click_arrow_for_questions_about_great(self,locators):
-        element = self.driver.find_element(*locators)
-        self.driver.execute_script("arguments[0].scrollIntoView();", element)
+        element = self.find_elements(locators)
+        self.execute_scripts(element)
         self.wait_for_load_element(locators)
         self.wait_for_clickable_element_for_home_page(locators)
-        self.driver.find_element(*locators).click()
+        self.find_elements(locators).click()
     @allure.step('Получаем текст соответсвующего вопроса')
     def get_text_questions_about_great(self, locators):
         return self.driver.find_element(*locators).text
@@ -28,9 +28,9 @@ class MainPage(BasePage):
 
     @allure.step('Нажатие на логотип "Самоката"')
     def click_scooter_logo(self):
-        self.driver.find_element(*MainPageLocators.LOGO_SCOOTER).click()
+        self.find_elements(MainPageLocators.LOGO_SCOOTER).click()
 
     @allure.step('Нажатие на логотип "Яндекс"')
     def click_yandex_logo(self):
         self.wait_for_load_element(MainPageLocators.LOGO_YANDEX)
-        self.driver.find_element(*MainPageLocators.LOGO_YANDEX).click()
+        self.find_elements(MainPageLocators.LOGO_YANDEX).click()
